@@ -6,5 +6,4 @@
 
 Working in Unity versions 2018, 2019, 2020, 2021, 2022
 
-Created by Ashfid
-Modified by kiltec
+Created by Ashfid, Modified by kiltec
