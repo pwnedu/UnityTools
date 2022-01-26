@@ -37,8 +37,7 @@ namespace CustomHierarchy
             {
                 if (!gameObj.CompareTag("EditorOnly")) gameObj.tag = "EditorOnly";
                 Rect offsetRect = new Rect(selection.position, selection.size);
-                var size = selection;
-                EditorGUI.DrawRect(new Rect (selection.position, new Vector2(selection.size.x * style.BackgroundWidth, selection.y * style.BackgroundHeight)), style.BackgroundColor);
+                EditorGUI.DrawRect(new Rect (selection.position, new Vector2(selection.size.x * style.BackgroundWidth, selection.size.y * style.BackgroundHeight)), style.BackgroundColor);
                 EditorGUI.LabelField(offsetRect, gameObj.name.Replace(style.headerTag, ""), style.TextStyle);
             }
         }
