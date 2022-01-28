@@ -35,7 +35,7 @@ namespace CustomHierarchy
             if (style.headerTag == string.Empty) return;
             if (gameObj.name.Contains(style.headerTag))
             {
-                if (!gameObj.CompareTag("EditorOnly") && style.useCaseScenario == UseCase.ForEditorUseOnly)
+                if (style.useCaseScenario == UseCase.ForEditorUseOnly && !gameObj.CompareTag("EditorOnly"))
                 { 
                     gameObj.tag = "EditorOnly"; 
                 }
