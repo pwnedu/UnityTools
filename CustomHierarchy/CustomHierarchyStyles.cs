@@ -33,5 +33,10 @@ namespace CustomHierarchy
             richText = true,
             fontSize = textSize,
         };
+        
+        [Header("How Will This Be Used?")]
+        public UseCase useCaseScenario;
     }
+
+    public enum UseCase { ForInGameObject, ForEditorUseOnly }
 }
