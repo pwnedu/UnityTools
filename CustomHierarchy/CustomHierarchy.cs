@@ -35,7 +35,10 @@ namespace CustomHierarchy
             if (style.headerTag == string.Empty) return;
             if (gameObj.name.Contains(style.headerTag))
             {
-                if (!gameObj.CompareTag("EditorOnly")) gameObj.tag = "EditorOnly";
+                if (!gameObj.CompareTag("EditorOnly") && style.useCaseScenario == UseCase.ForEditorUseOnly)
+                { 
+                    gameObj.tag = "EditorOnly"; 
+                }
                 var size = new Vector2(selection.size.x * style.BackgroundWidth, selection.size.y * style.BackgroundHeight);
                 Rect offsetRect = new Rect(selection.position, size);
                 EditorGUI.DrawRect(new Rect(selection.position, size), style.BackgroundColor);
