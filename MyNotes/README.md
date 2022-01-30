@@ -16,7 +16,7 @@ Optional steps:
 
 Useage:
 
-5. Press Ctrl + Alt + N to open the window or select it from the drop down menu Tools > Notes > My Notes
+5. Press Ctrl + Alt + N to open the window or select it from the drop down menu Tools -> Notes -> My Notes
 6. Write a note and save it.
 
 Created by kiltec
