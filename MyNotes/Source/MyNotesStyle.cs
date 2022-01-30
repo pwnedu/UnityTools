@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace pwnedu.Tools
 {
-    [CreateAssetMenu(menuName = "pwnedu/Tools/My Notes Style")]
+    [CreateAssetMenu(menuName = "My Notes/My Notes Style")]
     public class MyNotesStyle : ScriptableObject
     {
         [Header("Border Background Style")]
