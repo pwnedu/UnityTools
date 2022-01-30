@@ -5,7 +5,7 @@ namespace pwnedu.Tools
     [CreateAssetMenu(menuName = "pwnedu/Tools/My Notes Style")]
     public class MyNotesStyle : ScriptableObject
     {
-        [Header("Background Style")]
+        [Header("Border Background Style")]
         [SerializeField] [Tooltip("Increase the alpha channel to see the background.")] private Color backgroundColor;
         [SerializeField] private bool randomBackgroundColor;
         public Color BackgroundColor => randomBackgroundColor ? Random.ColorHSV() : backgroundColor;
