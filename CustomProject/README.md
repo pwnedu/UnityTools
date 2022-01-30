@@ -6,4 +6,4 @@
 
 Tested in Unity versions 2019, 2020
 
-Created by kiltec based on Ashfid's Custom Heirarchy Tool
+Created by kiltec, based on Ashfid's Custom Heirarchy Tool
