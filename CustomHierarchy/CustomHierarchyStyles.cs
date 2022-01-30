@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace CustomHierarchy
 {
-    [CreateAssetMenu(menuName = "Hierarchy/Styles")]
+    [CreateAssetMenu(menuName = "Hierarchy View/Hierarchy Styles")]
     public class CustomHierarchyStyles : ScriptableObject
     {
         public StyleData[] styles;
@@ -20,8 +20,7 @@ namespace CustomHierarchy
         public Color BackgroundColor => randomBackgroundColor ? Random.ColorHSV() : backgroundColor;
 
         [Header("Text Styles")]
-        [Range(0, 16), Tooltip("Keep it 0 for default size. Max is 16 as per the range")]
-        [SerializeField] private int textSize;
+        [SerializeField] [Range(0, 16), Tooltip("Keep it 0 for default size. Max is 16 as per the range")] private int textSize;
         [SerializeField] [Tooltip("Increase the alpha channel to see the text.")] private Color32 textColor;
         [SerializeField] private TextAnchor textAlignment;
         [SerializeField] private FontStyle textStyle;
@@ -33,7 +32,7 @@ namespace CustomHierarchy
             richText = true,
             fontSize = textSize,
         };
-        
+
         [Header("How Will This Be Used?")]
         public UseCase useCaseScenario;
     }
