@@ -18,7 +18,7 @@ namespace CustomProjectView
     [System.Serializable]
     public struct StyleData
     {
-        public string folderName;
+        public string folderOrFileName;
 
         [Header("Icon Styles")]
         public bool useIcons;
