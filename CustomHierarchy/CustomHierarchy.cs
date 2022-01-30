@@ -40,8 +40,8 @@ namespace CustomHierarchy
                     gameObj.tag = "EditorOnly"; 
                 }
                 var size = new Vector2(selection.size.x * style.backgroundWidth, selection.size.y * style.backgroundHeight);
-                Rect offsetRect = new Rect(selection.position, size);
-                EditorGUI.DrawRect(new Rect(selection.position, size), style.BackgroundColor);
+                var offsetRect = new Rect(selection.position, size);
+                EditorGUI.DrawRect(offsetRect, style.BackgroundColor);
                 EditorGUI.LabelField(offsetRect, gameObj.name.Replace(style.headerTag, ""), style.TextStyle);
             }
         }
