@@ -15,7 +15,7 @@ namespace pwnedu.Tools
         [SerializeField] private bool randomBackgroundColor;
         public Color BackgroundColor => randomBackgroundColor ? Random.ColorHSV() : backgroundColor;
 
-        [Header("Text Style")]
+        [Header("Header Text Style")]
         [SerializeField] [Range(0, 18), Tooltip("Keep it 0 for default size. Max is 16 as per the range")] private int textSize;
         [SerializeField] [Tooltip("Increase the alpha channel to see the text.")] private Color32 textColor;
         [SerializeField] private TextAnchor textAlignment;
