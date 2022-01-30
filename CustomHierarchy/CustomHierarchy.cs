@@ -16,15 +16,15 @@ namespace CustomHierarchy
 
         private static void HandleHierarchyWindowItemOnGUI(int instanceID, Rect selectionRect)
         {
-            GameObject gameObj = EditorUtility.InstanceIDToObject(instanceID) as GameObject;
+            GameObject gameObject = EditorUtility.InstanceIDToObject(instanceID) as GameObject;
 
-            if (gameObj != null && styleData != null)
+            if (gameObject != null && styleData != null)
             {
                 if (styleData.styles.Length > 0)
                 {
                     foreach (var style in styleData.styles)
                     {
-                        DrawAndApplyStyle(gameObj, style, selectionRect);
+                        DrawAndApplyStyle(gameObject, style, selectionRect);
                     }
                 }
             }
@@ -36,8 +36,8 @@ namespace CustomHierarchy
             if (gameObj.name.Contains(style.headerTag))
             {
                 if (style.useCaseScenario == UseCase.ForEditorUseOnly && !gameObj.CompareTag("EditorOnly"))
-                { 
-                    gameObj.tag = "EditorOnly"; 
+                {
+                    gameObj.tag = "EditorOnly";
                 }
                 var size = new Vector2(selection.size.x * style.backgroundWidth, selection.size.y * style.backgroundHeight);
                 var offsetRect = new Rect(selection.position, size);
