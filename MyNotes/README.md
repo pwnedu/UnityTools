@@ -11,7 +11,7 @@ Install:
 
 Optional steps:
 
-3. Right click in your Assets folder (Inside Editor folder) and go to pwnedu -> Tools -> My Notes Style
+3. Right click in your Assets folder (Inside Editor folder) and go to My Notes -> My Notes Style
 4. Edit your prefered style.
 
 Useage:
