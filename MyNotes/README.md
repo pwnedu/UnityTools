@@ -1,4 +1,4 @@
-# My Notes v1.1
+# My Notes v1.2
 
 A simple editor window for keeping track of your to do list in Unity.
 
