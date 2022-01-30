@@ -11,7 +11,7 @@ namespace CustomProjectView
         [SerializeField] private bool randomTextColor;
         public Color TextColor => randomTextColor ? Random.ColorHSV() : textColor;
 
-        [Header("Folder Style")]
+        [Header("Custom Style Data")]
         public StyleData[] styles;
     }
 
