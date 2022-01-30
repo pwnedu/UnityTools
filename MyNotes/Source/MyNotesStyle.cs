@@ -10,7 +10,7 @@ namespace pwnedu.Tools
         [SerializeField] private bool randomBackgroundColor;
         public Color BackgroundColor => randomBackgroundColor ? Random.ColorHSV() : backgroundColor;
 
-        [Header("Header Style")]
+        [Header("Header Background Style")]
         [SerializeField] [Tooltip("Increase the alpha channel to see the background.")] private Color headerColor;
         [SerializeField] private bool randomHeaderColor;
         public Color HeaderColor => randomHeaderColor ? Random.ColorHSV() : headerColor;
