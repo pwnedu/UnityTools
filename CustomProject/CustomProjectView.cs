@@ -44,8 +44,8 @@ namespace CustomProjectView
 
         private static void DrawAndApplyStyles(Object obj, StyleData style, Rect selection)
         {
-            if (style.folderName == string.Empty) return;
-            if (obj.name == style.folderName)
+            if (style.folderOrFileName == string.Empty) return;
+            if (obj.name == style.folderOrFileName)
             {
                 if (style.useIcons)
                 {
