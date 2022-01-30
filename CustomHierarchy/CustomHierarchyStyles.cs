@@ -13,8 +13,8 @@ namespace CustomHierarchy
     {
         public string headerTag;
         [Header("Background Styles")]
-        [Range(0, 1)] public float BackgroundWidth;
-        [Range(0, 1)] public float BackgroundHeight;
+        [Range(0, 1)] public float backgroundWidth;
+        [Range(0, 1)] public float backgroundHeight;
         [SerializeField] private Color backgroundColor;
         [SerializeField] private bool randomBackgroundColor;
         public Color BackgroundColor => randomBackgroundColor ? Random.ColorHSV() : backgroundColor;
