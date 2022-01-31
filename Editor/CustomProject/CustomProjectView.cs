@@ -25,7 +25,10 @@ namespace CustomProjectView
             var assetPath = AssetDatabase.GUIDToAssetPath(guid);
             var assetObject = AssetDatabase.LoadAssetAtPath<Object>(assetPath);
 
-            if (assetObject != null && styleData != null)
+            bool noStyling = selectionRect.height > 20;
+            if (noStyling || !assetObject) { return; } 
+
+            if (styleData != null)
             {
                 if (styleData.styles.Length > 0)
                 {
@@ -87,9 +90,6 @@ namespace CustomProjectView
         private static void DrawAndApplyExtensions(string assetPath, Rect selection)
         {
             string extension = Path.GetExtension(assetPath);
-            bool showExtension = selection.height > 20;
-
-            if (showExtension || assetPath.Length == 0) { return; }
 
             GUIStyle labelStyle = new GUIStyle(EditorStyles.label);
             Vector2 labelSize = labelStyle.CalcSize(new GUIContent(extension));
