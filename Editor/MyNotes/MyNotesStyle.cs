@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace pwnedu.Tools
+namespace MyNotes
 {
     [CreateAssetMenu(menuName = "My Notes/My Notes Style")]
     public class MyNotesStyle : ScriptableObject
