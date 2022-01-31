@@ -6,7 +6,7 @@ Tested on Unity versions 2019 and 2020
 
 Install:
 
-1. In your Assets folder create the folder path Tools/MyNotes/Editor
+1. Everything should be in a folder named Editor in Unity
 2. Place scripts in the Editor Folder
 
 Optional steps:
