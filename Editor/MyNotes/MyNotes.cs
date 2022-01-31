@@ -30,8 +30,8 @@ namespace pwnedu.Tools
     {
         //config
         static readonly string nl = Environment.NewLine; // Automatically select "\r\n" for win "\n" for mac
-        static readonly string referencePath = "Assets/Tools/MyNotes/"; // This is the save path. Make sure it exists. 
-        static readonly string fileName = "Message";
+        static readonly string referencePath = "Assets/"; // This is the save path. Make sure it exists. 
+        static readonly string fileName = "MyNote";
         static readonly string extension = ".txt";
         static readonly string appName = "My Notes";
         static readonly string appVersion = "v1.2";
