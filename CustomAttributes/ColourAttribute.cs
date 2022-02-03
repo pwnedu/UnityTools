@@ -20,12 +20,12 @@ namespace CustomAttributes
             r = g = b = a = 1f;
         }
 
-        public ColourAttribute(float aR, float aG, float aB, float aA)
+        public ColourAttribute(float red, float green, float blue, float alpha)
         {
-            r = aR / 255;
-            g = aG / 255;
-            b = aB / 255;
-            a = aA / 255;
+            r = red / 255;
+            g = green / 255;
+            b = blue / 255;
+            a = alpha / 255;
         }
 
         public Color Colour { get { return new Color(r, g, b, a); } }
