@@ -1,12 +1,8 @@
 {
-    "name": "UnityTools",
+    "name": "CustomAttributes",
     "rootNamespace": "",
-    "references": [
-        "GUID:16500689278dd6240b4d03eac3d97a79"
-    ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "references": [],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

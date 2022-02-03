@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82bb36dfa268bee4692540ed80f5d5f5, type: 3}
+  m_Name: Default Hierarchy Styles
+  m_EditorClassIdentifier: 
+  styles:
+  - headerTag: ---
+    horizontalPosition: 0
+    backgroundWidth: 1
+    backgroundHeight: 0.95
+    backgroundColor: {r: 1, g: 0, b: 0.6787672, a: 1}
+    randomBackgroundColor: 0
+    textSize: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 4293250033
+    textAlignment: 3
+    textStyle: 1
+    useCaseScenario: 0

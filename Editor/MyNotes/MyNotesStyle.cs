@@ -5,6 +5,12 @@ namespace MyNotes
     [CreateAssetMenu(menuName = "My Notes/My Notes Style")]
     public class MyNotesStyle : ScriptableObject
     {
+        public StyleData style;
+    }
+
+    [System.Serializable]
+    public struct StyleData
+    {
         [Header("Border Background Style")]
         [SerializeField] [Tooltip("Increase the alpha channel to see the background.")] private Color backgroundColor;
         [SerializeField] private bool randomBackgroundColor;

@@ -20,8 +20,8 @@ namespace MyNotes
 
         //layout and style
         private static MyNotesStyle styleData;
-        Color headerColour = new Color(59f / 255f, 63f / 255f, 171f / 255f, 255f / 255f);
-        Color borderColour = new Color(171f / 255f, 115f / 255f, 59f / 255f, 255f / 255f);
+        Color headerColour = new Color32(60, 60, 180, 255);
+        Color borderColour = new Color32(180, 120, 80, 255);
         Texture2D headerTexture;
         Texture2D borderTexture;
         Rect headerSection;
@@ -47,6 +47,7 @@ namespace MyNotes
         public void OnEnable()
         {
             InitTextures();
+            SetStyle();
             OpenNote();
         }
 
@@ -68,8 +69,8 @@ namespace MyNotes
 
             if (styleData != null)
             {
-                headerColour = styleData.HeaderColor;
-                borderColour = styleData.BackgroundColor;
+                headerColour = styleData.style.HeaderColor;
+                borderColour = styleData.style.BackgroundColor;
             }
 
             headerTexture = new Texture2D(1, 1);
@@ -81,6 +82,26 @@ namespace MyNotes
             borderTexture.Apply();
 
             Repaint();
+        }
+
+        public void SetStyle()
+        {
+            if (styleData == null)
+            {
+                style = new GUIStyle()
+                {
+                    normal = new GUIStyleState() { textColor = new Color32(125, 150, 200, 255) },
+                    fontStyle = FontStyle.Bold,
+                    alignment = TextAnchor.MiddleLeft,
+                    fixedHeight = 20,
+                    richText = true,
+                    fontSize = 14,
+                };
+            }
+            else
+            {
+                style = new GUIStyle(styleData.style.TextStyle);
+            }
         }
 
         private void OnGUI()
@@ -130,9 +151,7 @@ namespace MyNotes
             GUILayout.EndArea();
 
             GUILayout.BeginArea(header);
-            if (styleData == null) { style = EditorStyles.boldLabel; }
-            else { style = new GUIStyle(styleData.TextStyle); }
- 
+
             GUILayout.Label($"{Application.productName} {Application.version}", style);
             GUILayout.EndArea();
 

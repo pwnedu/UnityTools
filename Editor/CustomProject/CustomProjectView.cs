@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEditor;
 using System.IO;
 
@@ -26,7 +26,7 @@ namespace CustomProjectView
             var assetObject = AssetDatabase.LoadAssetAtPath<Object>(assetPath);
 
             bool noStyling = selectionRect.height > 20;
-            if (noStyling || !assetObject) { return; } 
+            if (noStyling || !assetObject) { return; }
 
             if (styleData != null)
             {
@@ -38,7 +38,7 @@ namespace CustomProjectView
                     }
                 }
 
-                if (styleData.showFileExtensions)
+                if (styleData.showFileExtensions && selectionRect.width > styleData.widthToShowExtensions)
                 {
                     DrawAndApplyExtensions(assetPath, selectionRect);
                 }
@@ -50,7 +50,14 @@ namespace CustomProjectView
             if (style.folderOrFileName == string.Empty) return;
             if (obj.name == style.folderOrFileName)
             {
-                if (style.useIcons)
+                var size = new Vector2(selection.size.x * style.backgroundWidth, selection.size.y * style.backgroundHeight);
+                var position = new Vector2(selection.position.x + 18, selection.y);
+                var offsetRect = new Rect(position, size);
+                
+                EditorGUI.DrawRect(offsetRect, style.BackgroundColor);
+                EditorGUI.LabelField(offsetRect, obj.name, style.TextStyle);
+
+                if (style.useIcons && selection.width > style.widthToShowIcons)
                 {
                     GUIStyle iconStyle = new GUIStyle(EditorStyles.label);
 
@@ -77,13 +84,6 @@ namespace CustomProjectView
                     }
                     GUI.color = previousGuiColor;
                 }
-
-                var size = new Vector2(selection.size.x * style.backgroundWidth, selection.size.y * style.backgroundHeight);
-                var position = new Vector2(selection.position.x + 18, selection.y);
-                var offsetRect = new Rect(position, size);
-                
-                EditorGUI.DrawRect(offsetRect, style.BackgroundColor);
-                EditorGUI.LabelField(offsetRect, obj.name, style.TextStyle);
             }
         }
 

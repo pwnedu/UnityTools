@@ -9,19 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b5d853a783f0f742817d9922adbb3cc, type: 3}
-  m_Name: DefaultHierarchyStyles
+  m_Script: {fileID: 11500000, guid: 085c6bff2aa424e4c85bf7049329fb1b, type: 3}
+  m_Name: Default My Notes Style
   m_EditorClassIdentifier: 
-  styles:
-  - headerTag: '--- '
-    backgroundWidth: 1
-    backgroundHeight: 1
-    backgroundColor: {r: 1, g: 0, b: 0, a: 1}
+  style:
+    backgroundColor: {r: 0.7058824, g: 0.47058824, b: 0.3137255, a: 1}
     randomBackgroundColor: 0
-    textSize: 0
+    headerColor: {r: 0.23529412, g: 0.23529412, b: 0.7058824, a: 1}
+    randomHeaderColor: 0
+    textSize: 14
     textColor:
       serializedVersion: 2
-      rgba: 4294967295
-    textAlignment: 4
+      rgba: 4291335805
+    textAlignment: 3
     textStyle: 1
-    useCaseScenario: 0

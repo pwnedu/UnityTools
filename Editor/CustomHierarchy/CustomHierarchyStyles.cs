@@ -1,4 +1,5 @@
-using UnityEngine;
+﻿using UnityEngine;
+using CustomAttributes;
 
 namespace CustomHierarchy
 {
@@ -11,8 +12,9 @@ namespace CustomHierarchy
     [System.Serializable]
     public struct StyleData
     {
-        public string headerTag;
+        [Highlight(75, 100, 125, 255)] public string headerTag;
         [Header("Background Styles")]
+        [Range(0, 20), Tooltip("Min 0 is left justified.  Max 20 is the left offest.")] public float horizontalPosition;
         [Range(0, 1), Tooltip("Min 0 is off.  Max 1 is the default size.")] public float backgroundWidth;
         [Range(0, 1), Tooltip("Min 0 is off.  Max 1 is the default size.")] public float backgroundHeight;
         [SerializeField] [Tooltip("Increase the alpha channel to see the background.")] private Color backgroundColor;
@@ -29,6 +31,7 @@ namespace CustomHierarchy
             normal = new GUIStyleState() { textColor = textColor },
             fontStyle = textStyle,
             alignment = textAlignment,
+            fixedHeight = 14f,
             richText = true,
             fontSize = textSize,
         };

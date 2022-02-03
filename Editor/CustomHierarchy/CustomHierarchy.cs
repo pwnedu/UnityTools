@@ -1,4 +1,4 @@
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
 namespace CustomHierarchy
@@ -39,8 +39,11 @@ namespace CustomHierarchy
                 {
                     gameObj.tag = "EditorOnly";
                 }
+                
+                var position = new Vector2(selection.position.x + style.horizontalPosition, selection.position.y);
                 var size = new Vector2(selection.size.x * style.backgroundWidth, selection.size.y * style.backgroundHeight);
-                var offsetRect = new Rect(selection.position, size);
+                var offsetRect = new Rect(position, size);
+                
                 EditorGUI.DrawRect(offsetRect, style.BackgroundColor);
                 EditorGUI.LabelField(offsetRect, gameObj.name.Replace(style.headerTag, ""), style.TextStyle);
             }

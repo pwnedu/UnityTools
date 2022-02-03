@@ -1,13 +1,13 @@
 {
   "name": "com.kiltec.unitytools",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "displayName": "Unity Tools by Kiltec",
   "description": "Productivity tools for everyone",
   "unity": "2018.1",
   "dependencies": {
  },
   "documentationUrl": "https://github.com/pwnedu/UnityTools/wiki",
-  "licensesUrl": "https://example.com/licensing.html",
+  "licensesUrl": "https://github.com/pwnedu/UnityTools/blob/main/LICENSE",
   "keywords": [
       "unity",
       "tools",

@@ -1,28 +1,31 @@
-using UnityEngine;
+﻿using UnityEngine;
+using CustomAttributes;
 
 namespace CustomProjectView
 {
     [CreateAssetMenu(menuName = "Project View/Project Styles")]
     public class CustomProjectStyles : ScriptableObject
     {
-        [Header("Extensions Style")]
-        public bool showFileExtensions;
+        // Extensions Style Data
+        [Colour(100, 150, 200, 255)] public bool showFileExtensions;
+        [Range(0, 400), Tooltip("Min 0 is always on.  Below set value extensions are hidden.")] public float widthToShowExtensions;
         [SerializeField] [Tooltip("Increase the alpha channel to see the text.")] private Color textColor;
         [SerializeField] private bool randomTextColor;
         public Color TextColor => randomTextColor ? Random.ColorHSV() : textColor;
 
-        [Header("Custom Style Data")]
+        // Custom Style Data
         public StyleData[] styles;
     }
 
     [System.Serializable]
     public struct StyleData
     {
-        public string folderOrFileName;
+        [Highlight(75, 100, 125, 255)] public string folderOrFileName;
 
         [Header("Icon Styles")]
         public bool useIcons;
         public Icon iconType;
+        [Range(0, 400), Tooltip("Min 0 is always on.  Below set value icons are hidden.")] public float widthToShowIcons;
         [SerializeField] [Tooltip("Increase the alpha channel to see the icon.")] private Color iconColor;
         [SerializeField] private bool randomIconColor;
         public Color IconColor => randomIconColor ? Random.ColorHSV() : iconColor;
@@ -44,6 +47,7 @@ namespace CustomProjectView
             normal = new GUIStyleState() { textColor = textColor },
             fontStyle = textStyle,
             alignment = textAlignment,
+            fixedHeight = 14f,
             richText = true,
             fontSize = textSize,
         };
