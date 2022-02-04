@@ -59,7 +59,10 @@ namespace CustomProjectView
 
             EditorGUILayout.LabelField("Extensions Style Data", EditorStyles.largeLabel);
             GUILayout.BeginVertical("Box");
+            var previousColour = GUI.contentColor;
+            GUI.contentColor = new Color32(100, 150, 200, 255);
             EditorGUILayout.PropertyField(showProperty);
+            GUI.contentColor = previousColour;
             EditorGUILayout.PropertyField(widthProperty);
             EditorGUILayout.PropertyField(colorProperty);
             EditorGUILayout.PropertyField(randomProperty);

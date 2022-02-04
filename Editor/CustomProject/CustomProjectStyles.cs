@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using CustomAttributes;
 
 namespace CustomProjectView
 {
@@ -7,7 +6,7 @@ namespace CustomProjectView
     public class CustomProjectStyles : ScriptableObject
     {
         // Extensions Style Data
-        [Colour(100, 150, 200, 255)] public bool showFileExtensions;
+        public bool showFileExtensions;
         [Range(0, 400), Tooltip("Min 0 is always on.  Below set value extensions are hidden.")] public float widthToShowExtensions;
         [SerializeField] [Tooltip("Increase the alpha channel to see the text.")] private Color textColor;
         [SerializeField] private bool randomTextColor;
@@ -20,7 +19,7 @@ namespace CustomProjectView
     [System.Serializable]
     public struct StyleData
     {
-        [Highlight(75, 100, 125, 255)] public string folderOrFileName;
+        public string folderOrFileName;
 
         [Header("Icon Styles")]
         public bool useIcons;
