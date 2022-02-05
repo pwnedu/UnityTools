@@ -8,6 +8,9 @@ namespace CustomHierarchy
     {
         private static CustomHierarchyStyles styleData;
 
+        private static float displayHeight;
+        public static float DisplayHeight { get { return displayHeight; } }
+
         static CustomHierarchy()
         {
             FindStyleData();
@@ -43,7 +46,8 @@ namespace CustomHierarchy
                 var position = new Vector2(selection.position.x + style.horizontalPosition, selection.position.y);
                 var size = new Vector2(selection.size.x * style.backgroundWidth, selection.size.y * style.backgroundHeight);
                 var offsetRect = new Rect(position, size);
-                
+                displayHeight = size.y;
+
                 EditorGUI.DrawRect(offsetRect, style.BackgroundColor);
                 EditorGUI.LabelField(offsetRect, gameObj.name.Replace(style.headerTag, ""), style.TextStyle);
             }

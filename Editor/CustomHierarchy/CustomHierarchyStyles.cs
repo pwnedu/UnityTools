@@ -30,7 +30,7 @@ namespace CustomHierarchy
             normal = new GUIStyleState() { textColor = textColor },
             fontStyle = textStyle,
             alignment = textAlignment,
-            fixedHeight = 14f,
+            fixedHeight = CustomHierarchy.DisplayHeight,
             richText = true,
             fontSize = textSize,
         };

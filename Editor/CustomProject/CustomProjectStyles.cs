@@ -46,7 +46,7 @@ namespace CustomProjectView
             normal = new GUIStyleState() { textColor = textColor },
             fontStyle = textStyle,
             alignment = textAlignment,
-            fixedHeight = 14f,
+            fixedHeight = CustomProjectView.DisplayHeight,
             richText = true,
             fontSize = textSize,
         };

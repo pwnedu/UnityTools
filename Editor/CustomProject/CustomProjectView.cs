@@ -14,6 +14,9 @@ namespace CustomProjectView
         private static readonly string heart = "♥︎";
         private static readonly string triangle = "◀";
 
+        private static float displayHeight;
+        public static float DisplayHeight { get { return displayHeight; } }
+
         static CustomProjectView()
         {
             FindStyleData();
@@ -50,10 +53,11 @@ namespace CustomProjectView
             if (style.folderOrFileName == string.Empty) return;
             if (obj.name == style.folderOrFileName)
             {
-                var size = new Vector2(selection.size.x * style.backgroundWidth, selection.size.y * style.backgroundHeight);
                 var position = new Vector2(selection.position.x + 18, selection.y);
+                var size = new Vector2(selection.size.x * style.backgroundWidth, selection.size.y * style.backgroundHeight);
                 var offsetRect = new Rect(position, size);
-                
+                displayHeight = size.y;
+
                 EditorGUI.DrawRect(offsetRect, style.BackgroundColor);
                 EditorGUI.LabelField(offsetRect, obj.name, style.TextStyle);
 
