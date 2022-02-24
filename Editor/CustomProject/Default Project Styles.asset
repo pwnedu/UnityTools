@@ -12,18 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6a2021f486fd534b8fc771c390d8f16, type: 3}
   m_Name: Default Project Styles
   m_EditorClassIdentifier: 
-  showFileExtensions: 1
+  fileLabelType: 2
   widthToShowExtensions: 250
+  rightOffset: 0
+  textSize: 10
+  textAlign: 1
+  textStyle: 0
   textColor: {r: 0.7877358, g: 0.8675409, b: 1, a: 1}
   randomTextColor: 0
   styles:
   - folderOrFileName: Scenes
-    useIcons: 1
-    iconType: 1
+    iconType: 2
     widthToShowIcons: 175
-    iconColor: {r: 0.5124998, g: 0, b: 1, a: 1}
+    iconOffset: 5
+    iconSize: 0
+    iconAlign: 0
+    iconColor: {r: 1, g: 0.8561901, b: 0, a: 1}
     randomIconColor: 0
-    backgroundWidth: 1
+    rightOffset: 0
     backgroundHeight: 1
     backgroundColor: {r: 1, g: 0, b: 0.6784314, a: 1}
     randomBackgroundColor: 0
@@ -31,5 +37,5 @@ MonoBehaviour:
     textColor:
       serializedVersion: 2
       rgba: 4293250033
-    textAlignment: 3
+    textAlignment: 0
     textStyle: 1

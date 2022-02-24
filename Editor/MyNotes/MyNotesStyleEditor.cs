@@ -6,16 +6,27 @@ namespace MyNotes
     [CustomEditor(typeof(MyNotesStyle))]
     public class MyNotesStyleEditor : Editor
     {
+        // Controller
         private SerializedObject styleController;
+
+        // Extensions
         private SerializedProperty styleProperty;
 
+        // Editor Properties
         GUIStyle headerStyle;
+
+        private Color headingColor = new Color32(225, 205, 140, 255);
+        private Color subHeadingColor = new Color32(225, 155, 155, 255);
 
         private void OnEnable()
         {
+            // Initialise Controller
             styleController = new SerializedObject(target);
+
+            // Find Property
             styleProperty = styleController.FindProperty("style");
 
+            // Creaete Header GUI Style
             SetHeaderStyle();
         }
 
@@ -25,7 +36,7 @@ namespace MyNotes
             {
                 normal = new GUIStyleState()
                 {
-                    textColor = new Color32(100, 150, 200, 255)
+                    textColor = headingColor
                 },
                 fontStyle = FontStyle.Bold,
                 alignment = TextAnchor.LowerCenter,
@@ -37,13 +48,22 @@ namespace MyNotes
 
         public override void OnInspectorGUI()
         {
+            var previousColour = GUI.contentColor;
+            
+            // Scriptable Title
             GUILayout.Label("Custom My Note Styling", headerStyle);
             GUILayout.Label(target.name, EditorStyles.centeredGreyMiniLabel);
             GUILayout.Space(10);
 
             EditorGUI.BeginChangeCheck();
-            
-            EditorGUILayout.LabelField($"Custom Style Data", EditorStyles.largeLabel);
+
+            // Area Heading
+            GUI.contentColor = subHeadingColor;
+            EditorGUILayout.LabelField($"Custom Notes Style Data", EditorStyles.largeLabel);
+            GUI.contentColor = previousColour;
+            GUILayout.Space(5);
+
+            // Custom Notes Styling
             EditorGUILayout.PropertyField(styleProperty);
             
             if(EditorGUI.EndChangeCheck())

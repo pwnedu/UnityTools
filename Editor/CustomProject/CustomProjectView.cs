@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using CustomExtensions;
+using UnityEngine;
 using UnityEditor;
 using System.IO;
 
@@ -8,11 +9,6 @@ namespace CustomProjectView
     public class CustomProjectView : MonoBehaviour
     {
         private static CustomProjectStyles styleData;
-
-        private static readonly string bullet = "●";
-        private static readonly string diamond = "◆";
-        private static readonly string heart = "♥︎";
-        private static readonly string triangle = "◀";
 
         private static float displayHeight;
         public static float DisplayHeight { get { return displayHeight; } }
@@ -41,9 +37,21 @@ namespace CustomProjectView
                     }
                 }
 
-                if (styleData.showFileExtensions && selectionRect.width > styleData.widthToShowExtensions)
+                if (selectionRect.width > styleData.widthToShowExtensions)
                 {
-                    DrawAndApplyExtensions(assetPath, selectionRect);
+                    switch (styleData.fileLabelType)
+                    {
+                        case FileInfoDisplay.None:
+                            break;
+                        case FileInfoDisplay.Extension:
+                            DrawAndApplyExtensions(assetPath, selectionRect);
+                            break;
+                        case FileInfoDisplay.Size:
+                            DrawAndApplyFileSize(assetPath, selectionRect);
+                            break;
+                        default:
+                            break;
+                    }
                 }
             }
         }
@@ -53,40 +61,15 @@ namespace CustomProjectView
             if (style.folderOrFileName == string.Empty) return;
             if (obj.name == style.folderOrFileName)
             {
-                var position = new Vector2(selection.position.x + 18, selection.y);
-                var size = new Vector2(selection.size.x * style.backgroundWidth, selection.size.y * style.backgroundHeight);
-                var offsetRect = new Rect(position, size);
-                displayHeight = size.y;
+                var offsetRect = GUIExtension.CalculateRect(selection, 18, style.rightOffset, style.backgroundHeight);
+                displayHeight = offsetRect.height;
 
                 EditorGUI.DrawRect(offsetRect, style.BackgroundColor);
                 EditorGUI.LabelField(offsetRect, obj.name, style.TextStyle);
 
-                if (style.useIcons && selection.width > style.widthToShowIcons)
+                if (style.iconType != Icon.None && selection.width > style.widthToShowIcons)
                 {
-                    GUIStyle iconStyle = new GUIStyle(EditorStyles.label);
-
-                    Rect iconRect = selection;
-                    iconRect.x += iconRect.width - 20;
-                    iconRect.width = selection.width;
-
-                    Color previousGuiColor = GUI.color;
-                    GUI.color = style.IconColor;
-                    switch (style.iconType)
-                    {
-                        case Icon.Bullet:
-                            GUI.Label(iconRect, bullet, iconStyle);
-                            break;
-                        case Icon.Diamond:
-                            GUI.Label(iconRect, diamond, iconStyle);
-                            break;
-                        case Icon.Heart:
-                            GUI.Label(iconRect, heart, iconStyle);
-                            break;
-                        case Icon.Triangle:
-                            GUI.Label(iconRect, triangle, iconStyle);
-                            break;
-                    }
-                    GUI.color = previousGuiColor;
+                    GUIExtension.DrawIconStyle(style.iconType, selection, style.IconStyle);
                 }
             }
         }
@@ -94,18 +77,22 @@ namespace CustomProjectView
         private static void DrawAndApplyExtensions(string assetPath, Rect selection)
         {
             string extension = Path.GetExtension(assetPath);
+            GUIExtension.DrawLabelStyle(extension, selection, styleData.LabelStyle);
+        }
 
-            GUIStyle labelStyle = new GUIStyle(EditorStyles.label);
-            Vector2 labelSize = labelStyle.CalcSize(new GUIContent(extension));
+        private static void DrawAndApplyFileSize(string assetPath, Rect selection)
+        {
+            var isFile = File.Exists(assetPath);
+            if (!isFile) { return; }
 
-            Rect extensionRect = selection;
-            extensionRect.width += selection.x;
-            extensionRect.x = extensionRect.width - labelSize.x - 4;
+            long size = new FileInfo(assetPath).Length;
 
-            Color previousGuiColor = GUI.color;
-            GUI.color = styleData.TextColor;
-            GUI.Label(extensionRect, extension, labelStyle);
-            GUI.color = previousGuiColor;
+            string metric;
+            if (size < 1000) { metric = $"{size} bytes"; }
+            else if (size >= 1000 && size < 1000000) { metric = $"{(float)size / 1024:0.00} KB"; }
+            else { metric = $"{(float)size / 1048576:0.00} MB"; }
+
+            GUIExtension.DrawLabelStyle(metric, selection, styleData.LabelStyle);
         }
 
         private static void FindStyleData()

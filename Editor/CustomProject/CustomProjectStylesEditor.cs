@@ -6,30 +6,46 @@ namespace CustomProjectView
     [CustomEditor(typeof(CustomProjectStyles))]
     public class CustomProjectStylesEditor : Editor
     {
+        // Controller
         private SerializedObject styleController;
 
         // Extensions
-        private SerializedProperty showProperty;
+        private SerializedProperty fileLabelInfo;
         private SerializedProperty widthProperty;
-        private SerializedProperty colorProperty;
+        private SerializedProperty rightOffset;
+        private SerializedProperty textSize;
+        private SerializedProperty textAlign;
+        private SerializedProperty textStyle;
+        private SerializedProperty textColor;
         private SerializedProperty randomProperty;
 
         // Styles
         private SerializedProperty styleProperty;
 
+        // Editor Properties
         GUIStyle headerStyle;
+
+        private Color headingColor = new Color32(225, 205, 140, 255);
+        private Color subHeadingColor = new Color32(225, 155, 155, 255);
 
         private void OnEnable()
         {
+            // Initialise Controller
             styleController = new SerializedObject(target);
 
-            showProperty = styleController.FindProperty("showFileExtensions");
+            // Find Properties
+            fileLabelInfo = styleController.FindProperty("fileLabelType");
             widthProperty = styleController.FindProperty("widthToShowExtensions");
-            colorProperty = styleController.FindProperty("textColor");
+            rightOffset = styleController.FindProperty("rightOffset");
+            textSize = styleController.FindProperty("textSize");
+            textAlign = styleController.FindProperty("textAlign");
+            textStyle = styleController.FindProperty("textStyle");
+            textColor = styleController.FindProperty("textColor");
             randomProperty = styleController.FindProperty("randomTextColor");
 
             styleProperty = styleController.FindProperty("styles");
 
+            // Create Header GUI Style
             SetHeaderStyle();
         }
 
@@ -39,7 +55,7 @@ namespace CustomProjectView
             {
                 normal = new GUIStyleState()
                 {
-                    textColor = new Color32(100, 150, 200, 255)
+                    textColor = headingColor
                 },
                 fontStyle = FontStyle.Bold,
                 alignment = TextAnchor.LowerCenter,
@@ -51,25 +67,41 @@ namespace CustomProjectView
 
         public override void OnInspectorGUI()
         {
+            var previousColour = GUI.contentColor;
+
+            // Scriptable Title
             GUILayout.Label("Custom Project View Styling", headerStyle);
             GUILayout.Label(target.name, EditorStyles.centeredGreyMiniLabel);
             GUILayout.Space(10);
 
             EditorGUI.BeginChangeCheck();
 
-            EditorGUILayout.LabelField("Extensions Style Data", EditorStyles.largeLabel);
-            GUILayout.BeginVertical("Box");
-            var previousColour = GUI.contentColor;
-            GUI.contentColor = new Color32(100, 150, 200, 255);
-            EditorGUILayout.PropertyField(showProperty);
+            // Area Heading
+            GUI.contentColor = subHeadingColor;
+            EditorGUILayout.LabelField("File Information Label Style", EditorStyles.largeLabel);
             GUI.contentColor = previousColour;
+            GUILayout.Space(5);
+
+            // File Information Label Styling
+            GUILayout.BeginVertical("Box");
+            EditorGUILayout.PropertyField(fileLabelInfo);
             EditorGUILayout.PropertyField(widthProperty);
-            EditorGUILayout.PropertyField(colorProperty);
+            EditorGUILayout.PropertyField(rightOffset);
+            EditorGUILayout.PropertyField(textSize);
+            EditorGUILayout.PropertyField(textAlign);
+            EditorGUILayout.PropertyField(textStyle);
+            EditorGUILayout.PropertyField(textColor);
             EditorGUILayout.PropertyField(randomProperty);
             GUILayout.EndVertical();
-
             GUILayout.Space(10);
-            EditorGUILayout.LabelField("Custom Style Data", EditorStyles.largeLabel);
+
+            // Area Heading
+            GUI.contentColor = subHeadingColor;
+            EditorGUILayout.LabelField("Custom Project View Style Data", EditorStyles.largeLabel);
+            GUI.contentColor = previousColour;
+            GUILayout.Space(5);
+
+            // Custom Project View Styling
             EditorGUILayout.PropertyField(styleProperty);
 
             if (EditorGUI.EndChangeCheck())
