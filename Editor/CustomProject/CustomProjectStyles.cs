@@ -20,7 +20,7 @@ namespace CustomProjectView
         {
             guiStyle = new GUIStyle()
             {
-                normal = new GUIStyleState() { textColor = textColor },
+                normal = new GUIStyleState() { textColor = TextColor },
                 fontStyle = textStyle,
                 alignment = TextAnchor.UpperLeft,
                 fixedHeight = CustomProjectView.DisplayHeight,
@@ -53,7 +53,7 @@ namespace CustomProjectView
         {
             guiStyle = new GUIStyle()
             {
-                normal = new GUIStyleState() { textColor = iconColor },
+                normal = new GUIStyleState() { textColor = IconColor },
                 fontStyle = FontStyle.Normal,
                 alignment = TextAnchor.UpperLeft,
                 fixedHeight = CustomProjectView.DisplayHeight,
