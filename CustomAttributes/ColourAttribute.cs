@@ -5,8 +5,10 @@ using UnityEngine;
 namespace CustomAttributes 
 {
     /// <summary>
-    /// Specified colour label [Colour(R, G, B, A)]
-    /// White label [Colour]
+    /// <para>Specified colour label (0 - 255)</para> 
+    /// <code>[Colour(R, G, B, A)]</code>
+    /// <para>White label</para> 
+    /// <code>[Colour]</code>
     /// </summary>
     public class ColourAttribute : PropertyAttribute
     {

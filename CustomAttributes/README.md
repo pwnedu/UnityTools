@@ -8,6 +8,11 @@ Examples:
 
 * [Highlight(75, 100, 125, 255)] public int myInt;
 * [Colour(100, 150, 200, 255)] public float myFloat;
+* [Disable] public double myDouble;
+* [DisplayAs("My Default Axis!!!")] public Vector3 axis;
+* [Format("colourString", boldBool, italicBool, indentBool) public string myString;
+
+Additional colours can be added to the Format stylesheet in CustomAttributes/Editor folder.
 
 Tested in Unity versions 2019, 2020
 

@@ -5,8 +5,10 @@ using UnityEngine;
 namespace CustomAttributes 
 {
     /// <summary>
-    /// Highlight field with colour block [Highlight(R, G, B, A)]
-    /// Highlight field with grey block [Highlight]
+    /// <para>Highlight field with colour block (0 - 255)</para> 
+    /// <code>[Highlight(R, G, B, A)]</code>
+    /// <para>Highlight field with grey block</para> 
+    /// <code>[Highlight]</code>
     /// </summary>
     public class HighlightAttribute : PropertyAttribute
     {
