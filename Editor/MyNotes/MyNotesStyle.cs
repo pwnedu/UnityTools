@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace MyNotes
 {
-    [CreateAssetMenu(menuName = "Unity Tools/My Notes/Notes Style")]
+    [CreateAssetMenu(menuName = "Unity Tools/My Notes/Notes Style", order = 1)]
     public class MyNotesStyle : ScriptableObject
     {
         public StyleData style;

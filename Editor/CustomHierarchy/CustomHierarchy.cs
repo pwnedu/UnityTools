@@ -12,6 +12,7 @@ namespace CustomHierarchy
         private static readonly int IgnoreLayer = LayerMask.NameToLayer("Default");
         private static readonly string IgnoreTag = "Untagged";
         private static readonly string EditorTag = "EditorOnly";
+        private static readonly string DefaultName = "Default";
 
         private static readonly string IdLabel = "ID";
         private static readonly string DynamicLabel = "Dynamic";
@@ -85,6 +86,15 @@ namespace CustomHierarchy
                             break;
                         case ObjectInfoDisplay.Static:
                             DrawAndApplyStatic(gameObject, selectionRect);
+                            break;
+                        case ObjectInfoDisplay.SpriteAll:
+                            DrawAndApplySpriteAll(gameObject, selectionRect);
+                            break;
+                        case ObjectInfoDisplay.SpriteLayer:
+                            DrawAndApplySpriteLayer(gameObject, selectionRect);
+                            break;
+                        case ObjectInfoDisplay.SpriteOrder:
+                            DrawAndApplySpriteOrder(gameObject, selectionRect);
                             break;
                         default:
                             break;
@@ -199,6 +209,40 @@ namespace CustomHierarchy
             if (styleData.excludeDefault && !staticState) { return; }
             if (staticState) { AddLabel(StaticLabel, selection); }
             else { AddLabel(DynamicLabel, selection); }
+        }
+
+        private static void DrawAndApplySpriteAll(GameObject gameObject, Rect selection)
+        {
+            var rend = gameObject.GetComponent<SpriteRenderer>();
+            if (rend)
+            {
+                var layerName = rend.sortingLayerName;
+                var order = rend.sortingOrder;
+                if (styleData.excludeDefault && layerName == DefaultName && order == 0) { return; }
+                AddLabel($"Sprite Layer {layerName}, Order {order}", selection);
+            }
+        }
+
+        private static void DrawAndApplySpriteLayer(GameObject gameObject, Rect selection)
+        {
+            var rend = gameObject.GetComponent<SpriteRenderer>();
+            if (rend)
+            {
+                var layerName = rend.sortingLayerName;
+                if (styleData.excludeDefault && layerName == DefaultName) { return; }
+                AddLabel($"Sprite Layer {layerName}", selection);
+            }
+        }
+
+        private static void DrawAndApplySpriteOrder(GameObject gameObject, Rect selection)
+        {
+            var rend = gameObject.GetComponent<SpriteRenderer>();
+            if (rend)
+            {
+                var order = rend.sortingOrder;
+                if (styleData.excludeDefault && order == 0) { return; }
+                AddLabel($"Sprite Order {order}", selection);
+            }
         }
 
         private static void AddLabel(string label, Rect selection)

@@ -10,7 +10,7 @@ namespace CustomAttributes
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            #region  PropertyDrawer Overrides
+            #region  Property Drawer Overrides
 
             GUI.enabled = false;
             EditorGUI.PropertyField(position, property, label);

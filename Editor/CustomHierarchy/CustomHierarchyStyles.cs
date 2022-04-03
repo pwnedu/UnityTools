@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace CustomHierarchy
 {
-    [CreateAssetMenu(menuName = "Unity Tools/Hierarchy View/Hierarchy Styles")]
+    [CreateAssetMenu(menuName = "Unity Tools/Hierarchy View/Hierarchy Styles", order = 2)]
     public class CustomHierarchyStyles : ScriptableObject
     {
         // Object Information Label Style
-        public ObjectInfoDisplay displayLabelType;
+        [Tooltip("Note: \nDisplaying Sprite information is not performant.")] public ObjectInfoDisplay displayLabelType;
         [Tooltip("Don't display a label for default states.")] public bool excludeDefault = true;
         [Range(0, 400), Tooltip("Min 0 is always on.  Below set value extensions are hidden.")] public float widthToShowLabels;
         [SerializeField] [Range(-40, 20), Tooltip("Min 0 is right justified.  Max 20 is the right offest.")] private float rightOffset;
@@ -93,5 +93,5 @@ namespace CustomHierarchy
     }
 
     public enum UseCase { ForInGameObject, ForEditorUseOnly }
-    public enum ObjectInfoDisplay { None, ID, Layers, Tags, Direction, Position, Rotation, Quaternion, Scale, Children, Objects, State, Static }
+    public enum ObjectInfoDisplay { None, ID, Layers, Tags, Direction, Position, Rotation, Quaternion, Scale, Children, Objects, State, Static, SpriteAll, SpriteLayer, SpriteOrder }
 }

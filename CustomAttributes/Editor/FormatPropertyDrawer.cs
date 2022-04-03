@@ -5,28 +5,24 @@ using UnityEditor;
 
 namespace CustomAttributes
 {
-	[InitializeOnLoad]
 	[CustomPropertyDrawer(typeof(FormatAttribute))]
 	public class FormatPropertyDrawer : PropertyDrawer
 	{
-		private static FormatStyles colourData;
-
-		private FormatAttribute format;
+        private FormatAttribute format;
 		private GUIStyle styleData;
-
-		static FormatPropertyDrawer()
-		{
-			FindStyleData();
-		}
 
 		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
 		{
-			#region  PropertyDrawer Overrides
+			#region  Property Drawer Overrides
 
 			// Start Property Field
 			EditorGUI.BeginProperty(position, label, property);
 
-			format = (FormatAttribute)attribute;
+			format = attribute as FormatAttribute;
+
+			// Set GUI field colour
+			var prevCol = GUI.backgroundColor;
+			GUI.backgroundColor = BGColour;
 
 			// Create Custom Font Style
 			styleData = new GUIStyle()
@@ -43,6 +39,9 @@ namespace CustomAttributes
 			// Draw field
 			EditorGUI.PropertyField(position, property, GUIContent.none);
 
+			// Revert GUI field colour
+			GUI.backgroundColor = prevCol;
+
 			// End Property Field
 			EditorGUI.EndProperty();
 
@@ -51,51 +50,17 @@ namespace CustomAttributes
 
 		private Color Colour
 		{
-			#region Colour Attribute Retrieval
-			
-			get
-			{
-				Color color = Color.grey * 1.5f;
+			get { return FormatStringColour.Colour(format.colour); }
+		}
 
-				if (colourData != null && colourData.colours.Length > 0)
-				{
-					var length = colourData.colours.Length;
-					for (int i = 0; i < length; i++)
-					{
-						if (colourData.colours[i].colourName == format.colour)
-						{
-							color = colourData.colours[i].textColour;
-							break;
-						}
-					}
-				}
-				else
-				{
-					switch (format.colour)
-					{
-						case "red": color = Color.red; break;
-						case "green": color = Color.green; break;
-						case "blue": color = Color.blue; break;
-						case "yellow": color = Color.yellow; break;
-						case "cyan": color = Color.cyan; break;
-						case "magenta": color = Color.magenta; break;
-						case "white": color = Color.white; break;
-						case "grey": color = Color.grey; break;
-						case "black": color = Color.black; break;
-						case "clear": color = Color.clear; break;
-						default: break;
-					}
-				}
-
-				return color;
-			}
-
-			#endregion
+		private Color BGColour
+		{
+			get { return FormatStringColour.Colour(format.bgColour); }
 		}
 
 		private FontStyle Style
 		{
-			#region Style Attribute Retrieval
+			#region Get Font Style Settings
 
 			get
 			{
@@ -114,7 +79,7 @@ namespace CustomAttributes
 
 		private TextAnchor Alignment
 		{
-			#region Alignment Attribute Retrieval
+			#region Get Text Alignment Settings
 
 			get
 			{
@@ -127,16 +92,6 @@ namespace CustomAttributes
 			}
 
 			#endregion
-		}
-
-		private static void FindStyleData()
-		{
-			var guids = AssetDatabase.FindAssets($"t:{typeof(FormatStyles)}");
-			if (guids.Length > 0)
-			{
-				var path = AssetDatabase.GUIDToAssetPath(guids[0]);
-				colourData = AssetDatabase.LoadAssetAtPath<FormatStyles>(path);
-			}
 		}
 	}
 }

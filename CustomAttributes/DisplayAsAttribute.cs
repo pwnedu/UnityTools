@@ -5,7 +5,7 @@ using UnityEngine;
 namespace CustomAttributes
 {
     /// <summary>
-    /// <para>Change the field name shown in the inspector</para>
+    /// <para>Use this PropertyAttribute to change the field name shown in the inspector</para>
     /// <code>[DisplayAs("New Name")]</code>
     /// </summary>
     [System.AttributeUsage(System.AttributeTargets.Field)]

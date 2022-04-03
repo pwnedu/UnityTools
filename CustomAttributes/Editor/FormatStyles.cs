@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CustomAttributes
 {
-    [CreateAssetMenu(menuName = "Custom View Styles/Format Styles", order = 4)]
+    [CreateAssetMenu(menuName = "Unity Tools/Inspector View/Format Styles", order = 3)]
     public class FormatStyles : ScriptableObject
     {
         public ColourData[] colours;

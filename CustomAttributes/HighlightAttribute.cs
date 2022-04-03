@@ -5,7 +5,7 @@ using UnityEngine;
 namespace CustomAttributes 
 {
     /// <summary>
-    /// <para>Highlight field with colour block (0 - 255)</para> 
+    /// <para>Use this PropertyAttribute to highlight a field with colour block (0 - 255)</para> 
     /// <code>[Highlight(R, G, B, A)]</code>
     /// <para>Highlight field with grey block</para> 
     /// <code>[Highlight]</code>

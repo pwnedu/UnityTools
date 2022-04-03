@@ -15,7 +15,7 @@ namespace CustomAttributes
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            #region  PropertyDrawer Overrides
+            #region  Property Drawer Overrides
 
             // Start Property Field
             EditorGUI.BeginProperty(position, label, property);

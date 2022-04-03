@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace CustomProjectView
 {
-    [CreateAssetMenu(menuName = "Unity Tools/Project View/Project Styles")]
+    [CreateAssetMenu(menuName = "Unity Tools/Project View/Project Styles", order = 4)]
     public class CustomProjectStyles : ScriptableObject
     {
         // File Information Label Style
