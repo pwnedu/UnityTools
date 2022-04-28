@@ -25,7 +25,17 @@ namespace CustomAttributes
             }
             else
             {
-                helpHeight = ValidationAttribute.height;
+                GUIStyle style = EditorStyles.helpBox;
+                style.alignment = TextAnchor.MiddleLeft;
+                style.clipping = TextClipping.Clip;
+                style.wordWrap = true;
+                style.padding = new RectOffset(10, 10, 10, 10);
+                style.margin = new RectOffset(0, 5, 0, 5);
+                style.fontSize = 12;
+
+                GUIContent content = new GUIContent(ValidationAttribute.message + "\n\n");
+                helpHeight = style.CalcHeight(content, Screen.width);
+
                 return base.GetPropertyHeight(prop, label) + helpHeight;
             }
         }

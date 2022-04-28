@@ -69,7 +69,7 @@ namespace CustomAttributes
                 property.animationCurveValue = AnimationCurve.Linear(curveAttribute.start, curveAttribute.min, curveAttribute.end, curveAttribute.max);  //AnimationCurve.Linear(0, 0, 1, 1); 
             }
 
-            var prevCol = GUI.backgroundColor;
+            var previousColour = GUI.backgroundColor;
             GUI.backgroundColor = BGColour;
 
             var curveRange = new Rect(curveAttribute.start, curveAttribute.min, curveAttribute.end, curveAttribute.max);
@@ -109,7 +109,7 @@ namespace CustomAttributes
                 }
             }
 
-            GUI.backgroundColor = prevCol;
+            GUI.backgroundColor = previousColour;
 
             if (curveAttribute.values)
             {

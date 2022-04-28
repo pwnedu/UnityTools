@@ -10,7 +10,7 @@ Property Attribute Examples:
 * [AnimatorLayer(true)] public string animationLayer;
 * [AnimatorParameter(true, true, ParameterType.All)] public string animationParameter;
 * [Colour(100, 150, 200, 255)] public float myFloat;
-* [Curve("cyan", 60, true, false, true, true, start = -0.5f, min = -0.5f, end = 0.5f, max = 0.5f)] public AnimationCurve myCurve;
+* [Curve("red", "yellow", 60, true, false, true, true, start = -0.5f, min = -0.5f, end = 0.5f, max = 0.5f)] public AnimationCurve myCurve;
 * [Disable] public double myDisabledField;
 * [DisplayAs("My Vector 3 Property!!!")] public Vector3 myVector;
 * [Format("textColour", "fieldColour", boldBool, italicBool, indentBool)] public string myString;
@@ -24,7 +24,7 @@ Property Attribute Examples:
 * [ShowOnly] public string myShowOnlyField;
 * [Tag] public string myTag;
 
-Conditional Property Attributes:
+Conditional Property Attribute Examples:
 
 * [Tooltip("Enable or Disable Demo Options")] public bool enableOne = true;
 * [BoolHide("enableOne", false)] public string demoDisplayName = "Player One";
@@ -41,7 +41,7 @@ Decorator Attribute Examples:
 * [LineBreak("lineColour", lineThickness, verticalPadding, order = 2)]
 * [Note("This is a description of something important!", MessageLabel.Info, order = 5)]
     
-Additional colours can be added to the Format stylesheet in CustomAttributes/Editor folder.
+Additional colours can be added to the Format stylesheet in CustomAttributes/Editor/Styles folder.
 
 Tested in Unity versions 2019, 2020
 
