@@ -1,4 +1,4 @@
-﻿// NOTE: put in a Editor folder. //
+﻿// NOTE: Put in an editor folder. //
 
 using UnityEngine;
 using UnityEditor;

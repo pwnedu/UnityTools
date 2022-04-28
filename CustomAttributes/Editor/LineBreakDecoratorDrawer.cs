@@ -30,7 +30,7 @@ namespace CustomAttributes
 
         private Color Colour
         {
-            get { return FormatStringColour.Colour(lineAttrib.colour); }
+            get { return StringColourExtension.Colour(lineAttrib.colour); }
         }
     }
 }

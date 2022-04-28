@@ -1,4 +1,4 @@
-﻿// NOTE: put in a Editor folder. //
+﻿// NOTE: Put in an editor folder. //
 
 using UnityEngine;
 using UnityEditor;
@@ -50,12 +50,12 @@ namespace CustomAttributes
 
 		private Color Colour
 		{
-			get { return FormatStringColour.Colour(format.colour); }
+			get { return StringColourExtension.Colour(format.colour); }
 		}
 
 		private Color BGColour
 		{
-			get { return FormatStringColour.Colour(format.bgColour); }
+			get { return StringColourExtension.Colour(format.bgColour); }
 		}
 
 		private FontStyle Style

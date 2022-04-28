@@ -44,10 +44,4 @@ namespace CustomAttributes
             type = textureType;
         }
     }
-
-    public enum TextureType
-    {
-        Sprite = 0,
-        Texture2D = 1
-    }
 }

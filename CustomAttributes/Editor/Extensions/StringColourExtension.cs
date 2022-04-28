@@ -6,11 +6,11 @@ using UnityEditor;
 namespace CustomAttributes 
 {
 	[InitializeOnLoad]
-	public class FormatStringColour
+	public class StringColourExtension
 	{
 		private static FormatStyles colourData;
 
-		static FormatStringColour()
+		static StringColourExtension()
 		{
 			FindStyleData();
 		}

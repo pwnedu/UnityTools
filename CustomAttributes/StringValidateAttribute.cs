@@ -34,20 +34,20 @@ namespace CustomAttributes
     ///     </item>
     /// </list>
     /// </summary>
-    public class ValidationAttribute : PropertyAttribute
+    public class StringValidateAttribute : PropertyAttribute
     {
         public string pattern;
         public string message;
         public float height;
 
-        public ValidationAttribute(string regexPattern, string helpMessage)
+        public StringValidateAttribute(string regexPattern, string helpMessage)
         {
             pattern = regexPattern;
             message = helpMessage;
             height = 60;
         }
 
-        public ValidationAttribute(string regexPattern, string helpMessage, float messageHeight)
+        public StringValidateAttribute(string regexPattern, string helpMessage, float messageHeight)
         {
             pattern = regexPattern;
             message = helpMessage;

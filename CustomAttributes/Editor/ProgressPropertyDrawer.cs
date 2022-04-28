@@ -107,12 +107,12 @@ namespace CustomAttributes
 
         private Color ProgressColour
         {
-            get { return FormatStringColour.Colour(progressAttribute.barColour); }
+            get { return StringColourExtension.Colour(progressAttribute.barColour); }
         }
 
         private Color BGColour
         {
-            get { return FormatStringColour.Colour(progressAttribute.bgColour); }
+            get { return StringColourExtension.Colour(progressAttribute.bgColour); }
         }
     }
 }

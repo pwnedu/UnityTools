@@ -6,15 +6,15 @@ using System.Text.RegularExpressions;
 
 namespace CustomAttributes 
 {
-    [CustomPropertyDrawer(typeof(ValidationAttribute))]
-    public class ValidationPropertyDrawer : PropertyDrawer
+    [CustomPropertyDrawer(typeof(StringValidateAttribute))]
+    public class StringValidateDrawer : PropertyDrawer
     {
         // These constants describe the height of the help box and the text field.
         readonly float textHeight = GUI.skin.textField.lineHeight + 3;
         float helpHeight;
 
         // Provide easy access to the RegexAttribute for reading information from it.
-        ValidationAttribute ValidationAttribute { get { return (ValidationAttribute)attribute; } }
+        StringValidateAttribute ValidationAttribute { get { return (StringValidateAttribute)attribute; } }
 
         // Here you must define the height of your property drawer. Called by Unity.
         public override float GetPropertyHeight(SerializedProperty prop, GUIContent label)

@@ -40,7 +40,7 @@ namespace CustomAttributes
 
 		private Color Colour
 		{
-			get { return FormatStringColour.Colour(headingAttribute.colour); }
+			get { return StringColourExtension.Colour(headingAttribute.colour); }
 		}
 
 		private FontStyle Style

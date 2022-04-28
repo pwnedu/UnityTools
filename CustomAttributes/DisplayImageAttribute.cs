@@ -121,4 +121,10 @@ namespace CustomAttributes
             stretch = stretchImage;
         }
     }
+
+    public enum TextureType
+    {
+        Sprite = 0,
+        Texture2D = 1
+    }
 }
