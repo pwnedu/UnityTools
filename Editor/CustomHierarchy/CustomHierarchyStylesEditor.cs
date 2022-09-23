@@ -70,6 +70,10 @@ namespace CustomHierarchy
         public override void OnInspectorGUI()
         {
             var previousColour = GUI.contentColor;
+            int size = 18;
+            bool button = CustomHierarchy.styleData.displayLabelType == ObjectInfoDisplay.SpriteAll
+                || CustomHierarchy.styleData.displayLabelType == ObjectInfoDisplay.SpriteLayer
+                || CustomHierarchy.styleData.displayLabelType == ObjectInfoDisplay.SpriteOrder;
 
             // Scriptable Title
             GUILayout.Label("Custom Hierarchy Styling", headerStyle);
@@ -86,7 +90,18 @@ namespace CustomHierarchy
 
             // File Information Label Styling
             GUILayout.BeginVertical("Box");
+            GUILayout.BeginHorizontal();
             EditorGUILayout.PropertyField(displayLabelInfo);
+            if (button)
+            {
+                Texture settingsIcon = (Texture)Resources.Load("settings");
+                GUIContent content = new GUIContent(settingsIcon, "Edit Labels");
+                if (GUILayout.Button(content, GUILayout.Width(size), GUILayout.Height(size)))
+                {
+                    CustomHeadingsPopUp.Initialise();
+                }
+            }
+            GUILayout.EndHorizontal();
             EditorGUILayout.PropertyField(excludeDefault);
             EditorGUILayout.PropertyField(widthProperty);
             EditorGUILayout.PropertyField(rightOffset);

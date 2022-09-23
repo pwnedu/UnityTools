@@ -8,6 +8,10 @@ namespace CustomHierarchy
     {
         // Object Information Label Style
         [Tooltip("Note: \nDisplaying Sprite information is not performant.")] public ObjectInfoDisplay displayLabelType;
+        [HideInInspector] public string spriteLayerName;
+        [HideInInspector] public string spriteOrderName;
+        [HideInInspector] public string sortingLayerName;
+        [HideInInspector] public string sortingOrderName;
         [Tooltip("Don't display a label for default states.")] public bool excludeDefault = true;
         [Range(0, 400), Tooltip("Min 0 is always on.  Below set value extensions are hidden.")] public float widthToShowLabels;
         [SerializeField] [Range(-40, 20), Tooltip("Min 0 is right justified.  Max 20 is the right offest.")] private float rightOffset;

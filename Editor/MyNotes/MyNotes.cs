@@ -38,12 +38,6 @@ namespace MyNotes
         string documentChanged = "";
         string fixedLineBreaks = "";
 
-        [MenuItem("Tools/Notes/My Notes %&n", priority = 20)] // Shortcut [Ctrl + Alt + N]
-        public static void ShowWindow()
-        {
-            GetWindow(typeof(MyNotes));
-        }
-
         public void OnEnable()
         {
             InitTextures();
@@ -248,7 +242,6 @@ namespace MyNotes
             }
         }
 
-        [MenuItem("Tools/Notes/Delete/Clear Note")]
         public static void DeleteSavedText()
         {
             string path = referencePath + fileName + extension;

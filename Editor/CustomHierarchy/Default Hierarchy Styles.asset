@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82bb36dfa268bee4692540ed80f5d5f5, type: 3}
   m_Name: Default Hierarchy Styles
   m_EditorClassIdentifier: 
-  displayLabelType: 2
+  displayLabelType: 13
+  spriteLayerName: Layer
+  spriteOrderName: 
+  sortingLayerName: 
+  sortingOrderName: 
   excludeDefault: 1
   widthToShowLabels: 250
   rightOffset: -15

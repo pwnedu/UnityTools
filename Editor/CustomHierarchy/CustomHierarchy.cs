@@ -7,7 +7,7 @@ namespace CustomHierarchy
     [InitializeOnLoad]
     public class CustomHierarchy : MonoBehaviour
     {
-        private static CustomHierarchyStyles styleData;
+        public static CustomHierarchyStyles styleData;
 
         private static readonly int IgnoreLayer = LayerMask.NameToLayer("Default");
         private static readonly string IgnoreTag = "Untagged";
@@ -22,12 +22,18 @@ namespace CustomHierarchy
         private static readonly string InactiveLabel = "Disabled";
         private static readonly string StaticLabel = "Static";
 
+        public static string spriteLayer = "Layer";
+        public static string spriteOrder = "Order";
+        public static string sortingLayer = "Sorting Layer";
+        public static string sortingOrder = "Sorting Order";
+
         private static float displayHeight;
         public static float DisplayHeight { get { return displayHeight; } }
 
         static CustomHierarchy()
         {
             FindStyleData();
+            InitialiseCustomLabels();
             EditorApplication.hierarchyWindowItemOnGUI += HandleHierarchyWindowItemOnGUI;
         }
 
@@ -219,7 +225,7 @@ namespace CustomHierarchy
                 var layerName = rend.sortingLayerName;
                 var order = rend.sortingOrder;
                 if (styleData.excludeDefault && layerName == DefaultName && order == 0) { return; }
-                AddLabel($"Sprite Layer {layerName}, Order {order}", selection);
+                AddLabel($"{spriteLayer} {layerName}, {spriteOrder} {order}", selection);
             }
         }
 
@@ -230,7 +236,7 @@ namespace CustomHierarchy
             {
                 var layerName = rend.sortingLayerName;
                 if (styleData.excludeDefault && layerName == DefaultName) { return; }
-                AddLabel($"Sprite Layer {layerName}", selection);
+                AddLabel($"{sortingLayer} {layerName}", selection);
             }
         }
 
@@ -241,7 +247,7 @@ namespace CustomHierarchy
             {
                 var order = rend.sortingOrder;
                 if (styleData.excludeDefault && order == 0) { return; }
-                AddLabel($"Sprite Order {order}", selection);
+                AddLabel($"{sortingOrder} {order}", selection);
             }
         }
 
@@ -258,6 +264,14 @@ namespace CustomHierarchy
                 var path = AssetDatabase.GUIDToAssetPath(guids[0]);
                 styleData = AssetDatabase.LoadAssetAtPath<CustomHierarchyStyles>(path);
             }
+        }
+
+        private static void InitialiseCustomLabels()
+        {
+            if (!string.IsNullOrEmpty(styleData.spriteLayerName)) { spriteLayer = styleData.spriteLayerName; }
+            if (!string.IsNullOrEmpty(styleData.spriteOrderName)) { spriteOrder = styleData.spriteOrderName; }
+            if (!string.IsNullOrEmpty(styleData.sortingLayerName)) { sortingLayer = styleData.sortingLayerName; }
+            if (!string.IsNullOrEmpty(styleData.sortingOrderName)) { sortingOrder = styleData.sortingOrderName; }
         }
     }
 }

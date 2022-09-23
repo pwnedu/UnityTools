@@ -1,6 +1,6 @@
 {
   "name": "com.kiltec.unitytools",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "displayName": "Unity Tools by pwnedu",
   "description": "Productivity tools for everyone",
   "unity": "2018.1",
@@ -10,7 +10,7 @@
     "unity",
     "tools",
     "productivity",
-	"pwnedu",
+    "pwnedu",
     "kiltec"
   ],
   "author": {
