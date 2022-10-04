@@ -6,17 +6,29 @@
 
 ### Property Attribute Examples: ###
 
-```cs[Angle] public float myAngle;```
+```cs
+[Angle] public float myAngle;
+```
 
-```cs[AnimatorLayer(true)] public string animationLayer;```
+```cs
+[AnimatorLayer(true)] public string animationLayer;
+```
 
-```cs[AnimatorParameter(true, true, ParameterType.All)] public string animationParameter;```
+```cs
+[AnimatorParameter(true, true, ParameterType.All)] public string animationParameter;
+```
 
-```cs[Colour(100, 150, 200, 255)] public float myFloat;```
+```cs
+[Colour(100, 150, 200, 255)] public float myFloat;
+```
 
-```cs[Curve("red", "yellow", 60, true, false, true, true, start = -0.5f, min = -0.5f, end = 0.5f, max = 0.5f)] public AnimationCurve myCurve;```
+```cs
+[Curve("red", "yellow", 60, true, false, true, true, start = -0.5f, min = -0.5f, end = 0.5f, max = 0.5f)] public AnimationCurve myCurve;
+```
 
-```cs[Disable] public double myDisabledField;```
+```cs
+[Disable] public double myDisabledField;
+```
 
 ```cs[DisplayAs("My Vector 3 Property!!!")] public Vector3 myVector;```
 
