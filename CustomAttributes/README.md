@@ -23,58 +23,98 @@
 ```
 
 ```cs
-[Curve("red", "yellow", 60, true, false, true, true, start = -0.5f, min = -0.5f, end = 0.5f, max = 0.5f)] public AnimationCurve myCurve;
+[Curve("red", "yellow", 60, true, false, true, true)] public AnimationCurve myCurve;
 ```
 
 ```cs
 [Disable] public double myDisabledField;
 ```
 
-```cs[DisplayAs("My Vector 3 Property!!!")] public Vector3 myVector;```
+```cs
+[DisplayAs("My Vector 3 Property!!!")] public Vector3 myVector;
+```
 
-```cs[Format("textColour", "fieldColour", boldBool, italicBool, indentBool)] public string myString;```
+```cs
+[Format("textColour", "fieldColour", boldBool, italicBool, indentBool)] public string myString;
+```
 
-```cs[Highlight(75, 100, 125, 255)] public int myInt;```
+```cs
+[Highlight(75, 100, 125, 255)] public int myInt;
+```
 
-```cs[Input] private string myInputAxis;```
+```cs
+[Input] private string myInputAxis;
+```
 
-```cs[Preview(size, TextureType.Texture2D)] public Texture2D texture2D;```
+```cs
+[Preview(size, TextureType.Texture2D)] public Texture2D texture2D;
+```
 
-```cs[Preview(size, TextureType.Sprite)] public Sprite sprite;```
+```cs
+[Preview(size, TextureType.Sprite)] public Sprite sprite;
+```
 
-```cs[Progress("progressColour", "backgroundColour", minValue, maxValue, height)] public float myProgress;```
+```cs
+[Progress("progressColour", "backgroundColour", minValue, maxValue, height)] public float myProgress;
+```
 
-```cs[Scene] public string mySceneString;```
+```cs
+[Scene] public string mySceneString;
+```
 
-```cs[Scene] public string mySceneInt;```
+```cs
+[Scene] public string mySceneInt;
+```
 
-```cs[ShowOnly] public string myShowOnlyField;```
+```cs
+[ShowOnly] public string myShowOnlyField;
+```
 
-```cs[Tag] public string myTag;```
+```cs
+[Tag] public string myTag;
+```
 
 
 ### Conditional Property Attribute Examples: ###
 
-```cs[Tooltip("Enable or Disable Demo Options")] public bool enableOne = true;```
+```cs
+[Tooltip("Enable or Disable Demo Options")] public bool enableOne = true;
+```
 
-```cs[BoolHide("enableOne", false)] public string demoDisplayName = "Player One";```
+```cs
+[BoolHide("enableOne", false)] public string demoDisplayName = "Player One";
+```
 
-```cs[Tooltip("Enable or Disable Select Options")] public Select selectEnumerator;```
+```cs
+[Tooltip("Enable or Disable Select Options")] public Select selectEnumerator;
+```
 
-```cs[EnumHide("selectEnumerator", 0)] public string enumDisplayName = "Player One";```
+```cs
+[EnumHide("selectEnumerator", 0)] public string enumDisplayName = "Player One";
+```
 
-```cs[StringValidate(RegexStringMatch, "InvalidEntryErrorString")] public stringToValidate;```
+```cs
+[StringValidate(RegexStringMatch, "InvalidEntryErrorString")] public stringToValidate;
+```
 
 
 ### Decorator Attribute Examples: ###
 
-```cs[DisplayImage("fileNameInResourcesFolder", imageWidth, imageHeight, stretchImageWidth, order = 3)]```
+```cs
+[DisplayImage("fileNameInResourcesFolder", imageWidth, imageHeight, stretchImageWidth, order = 3)]
+```
 
-```cs[Heading("headingColour", fontSize, boldBool, italicBool, centeredBool, order = 1)]```
+```cs
+[Heading("headingColour", fontSize, boldBool, italicBool, centeredBool, order = 1)]
+```
 
-```cs[LineBreak("lineColour", lineThickness, verticalPadding, order = 2)]```
+```cs
+[LineBreak("lineColour", lineThickness, verticalPadding, order = 2)]
+```
 
-```cs[Note("This is a description of something important!", MessageLabel.Info, order = 5)]```
+```cs
+[Note("This is a description of something important!", MessageLabel.Info, order = 5)]
+```
 
     
 Additional colours can be added to the Format stylesheet in CustomAttributes/Editor/Styles folder.
