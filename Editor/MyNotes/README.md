@@ -1,20 +1,19 @@
 # My Notes #
 
-A simple editor window for keeping track of your to do list in Unity.
+### A simple editor window for keeping track of your to do list in Unity. ###
 
-Tested on Unity versions 2019 and 2020
+---
 
-Install:
+#### My Notes Settings ####
 
-1. Everything should be in a folder named Editor in Unity
-2. Place scripts in the Editor Folder
+1. Inside Unity navigate to the menu bar and select 'Tools' ▶ 'Notes' ▶ 'Notes Style Settings'
+2. Edit your note styling.
 
-Optional steps:
+---
 
-3. Right click in your Assets folder (Inside Editor folder) and go to Unity Tools -> My Notes -> Notes Style
-4. Edit your prefered style.
+#### My Notes Useage ####
 
-Useage:
+1. Press 'Ctrl + Alt + N' to open the note window or select it from the drop down menu 'Tools' ▶ 'Notes' ▶ 'My Notes'
+2. Write a note and save it.
 
-5. Press Ctrl + Alt + N to open the window or select it from the drop down menu Tools -> Notes -> My Notes
-6. Write a note and save it.
+---
