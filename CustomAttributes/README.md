@@ -18,7 +18,7 @@ using CustomAttributes;
 ```
 
 ```cs
-[AnimatorParameter(true, true, ParameterType.All)] public string animationParameter;
+[AnimatorParameter(showParamaterType, logChangesToConsole, ParameterType.All)] public string animationParameter;
 ```
 
 ```cs
