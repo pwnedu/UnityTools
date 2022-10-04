@@ -1,6 +1,9 @@
-# Unity Custom Project View Tool #
+### Project View Settings ###
 
-1. Everything should be in a folder named Editor in Unity
-2. Right click in your Assets folder (Inside Editor folder) and go to Unity Tools -> Project View -> Project Styles
-3. Edit your styles.
+---
 
+1. Inside Unity navigate to the menu bar and select 'Tools' ▶ 'Custom Tools' ▶ 'Custom Project View' ▶ 'Project View Settings'
+
+2. Edit your Project View styling.
+
+---
