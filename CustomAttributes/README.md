@@ -85,7 +85,7 @@ using CustomAttributes;
 ```
 
 ```cs
-[BoolHide("enableOne", false)] public string demoDisplayName = "Player One";
+[BoolHide("enableOne", hideFieldOrDisableBool, inverseOperationBool)] public string demoDisplayName = "Player One";
 ```
 
 ```cs
