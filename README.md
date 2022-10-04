@@ -5,10 +5,10 @@
 ---
 
 ```txt
-Custom Attributes
-Custom Hierarchy
-Custom Project View
-My Notes
+ ◆ Custom Attributes
+ ◆ Custom Hierarchy
+ ◆ Custom Project View
+ ◆ My Notes
 ```
 
 ---
