@@ -13,7 +13,7 @@
 
 ---
 
-#### Package Installation ####
+### Package Installation ###
 
 1. Download code from repository by clicking the green 'Code' button and selecting 'Download ZIP' 
 2. Unzip files to a location on your computer.
@@ -23,6 +23,8 @@
 6. When the package is selected click 'Open'
 
 ---
+
+**Tested in Unity versions 2018, 2019, 2020, 2021**
 
 **Created by:**
 
