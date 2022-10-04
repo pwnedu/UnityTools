@@ -120,5 +120,4 @@ using CustomAttributes;
 ```
 
 
-    
 Additional colours can be added to the Format stylesheet in CustomAttributes/Editor/Styles folder.
