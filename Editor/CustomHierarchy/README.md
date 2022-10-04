@@ -1,6 +1,11 @@
 # Unity Custom Hierarchy Tool #
 
-1. Everything should be in a folder named Editor in Unity
-2. Right click in your Assets folder (Inside Editor folder) and go to Unity Tools -> Hierarchy View -> Hierarchy Styles
-3. Edit your styles.
+### Hierarchy Settings ###
 
+---
+
+1. Inside Unity navigate to the menu bar and select 'Tools' ▶ 'Custom Tools' ▶ 'Custom Hierarchy' ▶ 'Hierarchy Settings'
+
+2. Edit your Hierarchy styling.
+
+---
