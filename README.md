@@ -24,15 +24,17 @@
 
 ---
 
-**Tested in Unity versions 2018, 2019, 2020, 2021**
+#### Tested in Unity versions 2018, 2019, 2020, 2021 #### 
 
-**Created by:**
+---
+
+#### Created by: #### 
 
 pwnedu
 
 ---
 
-**Contributors:**
+#### Contributors: #### 
 
 Kiltec
 
