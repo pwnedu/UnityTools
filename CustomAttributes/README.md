@@ -26,7 +26,7 @@ using CustomAttributes;
 ```
 
 ```cs
-[Curve("red", "yellow", 60, true, false, true, true)] public AnimationCurve myCurve;
+[Curve("red", "yellow", height, showPresets, editableValues, fillWidth, showLabel)] public AnimationCurve myCurve;
 ```
 
 ```cs
