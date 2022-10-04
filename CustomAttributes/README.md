@@ -14,7 +14,7 @@ using CustomAttributes;
 ```
 
 ```cs
-[AnimatorLayer(true)] public string animationLayer;
+[AnimatorLayer(logChangesToConsole)] public string animationLayer;
 ```
 
 ```cs
