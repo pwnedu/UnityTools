@@ -1,4 +1,4 @@
-# Unity Custom Hierarchy Tool #
+# Unity Custom Hierarchy #
 
 ### Hierarchy Settings ###
 
