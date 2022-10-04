@@ -2,7 +2,10 @@
 
 ### Add this reference to the top of your script: ###
 
-* using CustomAttributes;
+```cs
+using CustomAttributes;
+```
+
 
 ### Property Attribute Examples: ###
 
