@@ -119,9 +119,6 @@ using CustomAttributes;
 [Note("This is a description of something important!", MessageLabel.Info, order = 5)]
 ```
 
+
     
 Additional colours can be added to the Format stylesheet in CustomAttributes/Editor/Styles folder.
-
-Tested in Unity versions 2019, 2020
-
-Created by kiltec of pwnedu games
