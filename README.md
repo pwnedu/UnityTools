@@ -23,6 +23,6 @@ pwnedu
 
 Kiltec
 
-Ashfidable
+Ashfid
 
 ---
