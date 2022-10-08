@@ -16,5 +16,6 @@
   "author": {
     "name": "Kiltec",
     "url": "https://github.com/pwnedu"
-  }
+  },
+  "type": "tool"
 }
