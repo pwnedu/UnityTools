@@ -9,7 +9,6 @@ namespace CustomConsole
         {
             Color32 col = colour;
 
-            // Separate colour
             int intRedVal = col.r;
             int intGreenVal = col.g;
             int intBlueVal = col.b;
