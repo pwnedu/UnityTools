@@ -10,7 +10,7 @@ using CustomConsole;
 
 
 ```cs
-CC.ColToHex(Color.cyan, debug: true);
+CC.ColToHex(Color.yellow, debug: true);
 ```
 
 ```cs
