@@ -4,11 +4,12 @@ namespace CustomConsole
 {
     public static class CC
     {
+        // Color32 To Hex Conversion
         public static string ColToHex(Color32 colour)
         {
             Color32 col = colour;
 
-            //Debug colour
+            // Separate colour
             int intRedVal = col.r;
             int intGreenVal = col.g;
             int intBlueVal = col.b;
@@ -18,11 +19,11 @@ namespace CustomConsole
             return hexVal;
         }
 
+        // Log Color32 Conversion
         public static string ColToHex(Color32 colour, bool debug)
         {
             Color32 col = colour;
 
-            //Debug colour
             int intRedVal = col.r;
             int intGreenVal = col.g;
             int intBlueVal = col.b;
@@ -37,11 +38,11 @@ namespace CustomConsole
             return hexVal;
         }
 
+        // Color To Hex Conversion
         public static string ColToHex(Color colour)
         {
             Color col = colour;
 
-            //Debug colour
             int intRedVal = (int)(col.r * 255);
             int intGreenVal = (int)(col.g * 255);
             int intBlueVal = (int)(col.b * 255);
@@ -51,11 +52,11 @@ namespace CustomConsole
             return hexVal;
         }
 
+        // Log Color Conversion
         public static string ColToHex(Color colour, bool debug)
         {
             Color col = colour;
 
-            //Debug colour
             int intRedVal = (int)(col.r * 255);
             int intGreenVal = (int)(col.g * 255);
             int intBlueVal = (int)(col.b * 255);
@@ -70,11 +71,14 @@ namespace CustomConsole
             return hexVal;
         }
 
+
+        // Debug Color Start
         public static string Col(Color colour)
         {
             return $"<color=#{ColToHex(colour)}>";
         }
 
+        // Debug Color End
         public static string End()
         {
             return "</color>";
