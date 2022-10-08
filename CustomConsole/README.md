@@ -6,7 +6,7 @@
 using CustomConsole;
 ```
 
-### Convert Colours To Hex Value: ###
+### Convert Colours To Hex Values: ###
 
 
 ```cs
@@ -21,7 +21,7 @@ CC.ColToHex(new Color(.4f, .8f, .2f, 1f), debug: true);
 CC.ColToHex(new Color32(225, 75, 25, 255), debug: true);
 ```
 
-### Use Colour in Debug Logs: ###
+### Use Colours in Debug Logs: ###
 
 ```cs
 Debug.Log(CC.Col(Color.white) + "Test Message 1 Color.white" + CC.End());
