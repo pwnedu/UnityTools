@@ -14,7 +14,7 @@ CC.ColToHex(Color.yellow, debug: true);
 ```
 
 ```cs
-CC.ColToHex(new Color(.4f, .8f, .2f, 1), debug: true);
+CC.ColToHex(new Color(.4f, .8f, .2f, 1f), debug: true);
 ```
 
 ```cs
