@@ -6,6 +6,20 @@
 using CustomConsole;
 ```
 
+### Colour To Hex Value: ###
+
+
+```cs
+CC.ColToHex(Color.cyan, debug: true);
+```
+
+```cs
+CC.ColToHex(new Color(.4f, .8f, .2f, 1), debug: true);
+```
+
+```cs
+CC.ColToHex(new Color32(225, 75, 25, 255), debug: true);
+```
 
 ### Debug Colour Examples: ###
 
