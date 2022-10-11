@@ -64,6 +64,14 @@ namespace CustomExtensions
             else if (anchor == InfoAnchor.Bottom) { return TextAnchor.LowerLeft; }
             else return TextAnchor.UpperLeft;
         }
+
+        public static Color GetTextColour()
+        {
+            Color darkModeTextColour = new Color(0.75f, 0.75f, 0.75f);
+            Color normalModeTextColour = new Color(0.25f, 0.25f, 0.25f);
+
+            return EditorGUIUtility.isProSkin ? darkModeTextColour : normalModeTextColour;
+        }
     }
 
     public class LabelStyle
