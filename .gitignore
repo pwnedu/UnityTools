@@ -5,4 +5,5 @@
 
 # Unity3D generated meta files
 *.meta
+!*asset.meta
 !*asmdef.meta
