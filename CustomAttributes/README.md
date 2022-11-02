@@ -66,7 +66,7 @@ using CustomAttributes;
 ```
 
 ```cs
-[Scene] public string mySceneInt;
+[Scene] public int mySceneInt;
 ```
 
 ```cs
