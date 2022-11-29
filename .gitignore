@@ -1,9 +1,0 @@
-# This .gitignore file should be placed at the root directory of Unity Packages
-
-# Visual Studio cache directory
-.vs/
-
-# Unity3D generated meta files
-*.meta
-!*asset.meta
-!*asmdef.meta
