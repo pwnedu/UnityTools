@@ -268,10 +268,13 @@ namespace CustomHierarchy
 
         private static void InitialiseCustomLabels()
         {
-            if (!string.IsNullOrEmpty(styleData.spriteLayerName)) { spriteLayer = styleData.spriteLayerName; }
-            if (!string.IsNullOrEmpty(styleData.spriteOrderName)) { spriteOrder = styleData.spriteOrderName; }
-            if (!string.IsNullOrEmpty(styleData.sortingLayerName)) { sortingLayer = styleData.sortingLayerName; }
-            if (!string.IsNullOrEmpty(styleData.sortingOrderName)) { sortingOrder = styleData.sortingOrderName; }
+            if (styleData)
+            {
+                if (!string.IsNullOrEmpty(styleData.spriteLayerName)) { spriteLayer = styleData.spriteLayerName; }
+                if (!string.IsNullOrEmpty(styleData.spriteOrderName)) { spriteOrder = styleData.spriteOrderName; }
+                if (!string.IsNullOrEmpty(styleData.sortingLayerName)) { sortingLayer = styleData.sortingLayerName; }
+                if (!string.IsNullOrEmpty(styleData.sortingOrderName)) { sortingOrder = styleData.sortingOrderName; }
+            }
         }
     }
 }
