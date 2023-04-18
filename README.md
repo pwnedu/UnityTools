@@ -1,3 +1,7 @@
+---
+description: This unique set of tools for Unity includes hierarchy, project view, console and inspector customisation. You can also keep track of your progress with a handy note taking window.
+---
+
 # UnityTools #
 
 ### A Collection of Simple Tools for Unity ###
