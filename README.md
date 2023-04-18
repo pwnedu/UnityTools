@@ -1,6 +1,3 @@
-
-# UnityTools #
-
 ---
 Description: This unique set of tools for Unity includes a comprehensive list of customisation options for hierarchy, project, console and inspector windows. You can also keep track of your progress with a handy note taking window.
 ---
